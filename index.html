@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Where to Get Coffee and Boba in Bay Area?</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-drag@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  </head>
+  <body>
+    <div class="p-4 flex flex-col h-screen">
+      <h1 class="font-bold text-3xl text-center">
+        Where to Get Coffee and Boba in Bay Area?
+      </h1>
+      <main class="flex flex-1 flex-row mt-4 space-x-4 justify-center">
+        <div class="w-8/12 flex justify-center items-center relative">
+          <img
+            id="map"
+            src="assets/map.png"
+            alt="Bay Area map"
+            height="1270"
+            width="1838"
+            class="absolute h-full w-auto object-contain opacity-80"
+          />
+          <svg id="root" class="absolute h-full"></svg>
+        </div>
+        <div class="w-4/12 flex flex-col space-y-2 text-xs">
+          <div class="self-start text-lg font-bold">Intersection</div>
+          <div class="flex flex-row items-center space-x-2" id="sliderA">
+            <label style="width: 100px" for="circleASize"
+              >Size (Red Circle)</label
+            >
+            <input
+              style="accent-color: rgb(241, 148, 138)"
+              type="range"
+              id="circleASize"
+              min="30"
+              max="300"
+              value="80"
+              step="5"
+            />
+            <label id="circleASizeMile" for="circleASize"></label>
+          </div>
+          <div class="flex flex-row items-center space-x-2" id="sliderB">
+            <label style="width: 100px" for="circleBSize"
+              >Size (Blue Circle)</label
+            >
+            <input
+              style="accent-color: rgb(133, 193, 233)"
+              type="range"
+              id="circleBSize"
+              min="30"
+              max="300"
+              value="60"
+              step="5"
+            />
+            <label id="circleBSizeMile" for="circleASize"></label>
+          </div>
+          <div class="self-start text-lg font-bold">Filters</div>
+          <div
+            class="flex flex-row items-center space-x-2"
+            id="minimumRatingSlider"
+          >
+            <label style="width: 100px" for="minimumRating"
+              >Minimal Rating</label
+            >
+            <input
+              style="accent-color: orange"
+              type="range"
+              id="minimumRating"
+              min="0"
+              max="5"
+              step="0.1"
+              value="4"
+            />
+            <label class="w-2" id="minimumRatingNumber" for="minimumRating"
+              >4.0</label
+            >
+          </div>
+          <div class="flex flex-row items-center space-x-2" id="searchName">
+            <label style="width: 100px" for="searchNameInput"
+              >Search By Name</label
+            >
+            <input
+              class="outline-none border p-1 rounded-lg"
+              id="searchNameInput"
+              placeholder='Try "Starbucks"'
+            />
+          </div>
+          <button
+            id="applyButton"
+            class="self-start bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded"
+          >
+            Search within Intersection
+          </button>
+          <div class="italic text-lg">
+            <span id="shopsFoundCount">0</span> shops found
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="scripts/globals.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/layout.js"></script>
+  </body>
+</html>

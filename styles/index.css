@@ -1,0 +1,4 @@
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: lightgray;
+  border-radius: 1rem;
+}
