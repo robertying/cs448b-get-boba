@@ -12,5 +12,9 @@ window.canvasHeight = 1270;
 window.mapZoom = 9.35 / 80; // mile/pixel
 
 window.intersectionData = [];
+window.filteredData = [];
 window.minimumRating = 4.0;
 window.searchName = "";
+
+window.throttleTime = 1000 / 60; // target 60 fps (0.0167 update rate)
+window.debounceTime = 300; // wait for search input (estimated human response time)
