@@ -4,6 +4,8 @@
 >
 > Rui Ying / ruiying
 
+Live at https://cs448b.ruiying.io.
+
 ## Development
 
 The assignment helped me revisit and apply what we have learned from the Observable notebooks to something new.
